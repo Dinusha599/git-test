@@ -1,8 +1,62 @@
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.layout.GridPane?>
+<?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<GridPane fx:controller="sample.Controller"
-          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <AnchorPane prefHeight="416.0" prefWidth="800.0">
+         <children>
+            <VBox layoutX="25.0" layoutY="56.0" prefHeight="203.0" prefWidth="160.0" spacing="15.0">
+               <children>
+                  <Label text="ID">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label text="Title" />
+                  <Label text="Author" />
+                  <Label text="Year" />
+                  <Label text="Pages" />
+               </children>
+            </VBox>
+            <VBox layoutX="80.0" layoutY="50.0" prefHeight="203.0" prefWidth="218.0" spacing="10.0">
+               <children>
+                  <TextField fx:id="tfid" prefHeight="14.0" prefWidth="294.0" />
+                  <TextField fx:id="tftitle" layoutX="10.0" layoutY="10.0" />
+                  <TextField fx:id="tfauthor" layoutX="10.0" layoutY="36.0" />
+                  <TextField fx:id="tfyear" layoutX="10.0" layoutY="61.0" />
+                  <TextField fx:id="tfpages" layoutX="10.0" layoutY="87.0" />
+               </children>
+            </VBox>
+            <TreeTableView fx:id="tvbooks" layoutX="312.0" layoutY="52.0" prefHeight="294.0" prefWidth="482.0">
+              <columns>
+                <TreeTableColumn fx:id="colid" prefWidth="71.20001220703125" text="ID" />
+                <TreeTableColumn fx:id="coltitle" prefWidth="125.60003662109375" text="Title" />
+                  <TreeTableColumn fx:id="colauthor" prefWidth="125.5999755859375" text="Author" />
+                  <TreeTableColumn fx:id="colyear" prefWidth="73.60003662109375" text="Year" />
+                  <TreeTableColumn fx:id="colpages" prefWidth="88.00006103515625" text="Pages" />
+              </columns>
+            </TreeTableView>
+            <Button fx:id="btninsert" layoutX="37.0" layoutY="259.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="26.0" prefWidth="78.0" text="Insert" />
+            <Button fx:id="btnupdate" layoutX="130.0" layoutY="259.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="26.0" prefWidth="78.0" text="Update" />
+            <Button fx:id="btndelete" layoutX="216.0" layoutY="258.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="26.0" prefWidth="77.0" text="Delete" />
+         </children>
+      </AnchorPane>
+   </children>
 </GridPane>
